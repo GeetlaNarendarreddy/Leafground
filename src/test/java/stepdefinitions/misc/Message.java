@@ -64,4 +64,40 @@ public class Message {
 
 
     }
+
+    @And("User click on the Info")
+    public void userClickOnTheInfo() {
+        message.clickOnMinfo();
+    }
+
+    @Then("Info Message popup should be show")
+    public void infoMessagePopupShouldBeShow() {
+        message.getTextMinfo();
+    }
+
+    @Then("Click on the cross button")
+    public void clickOnTheCrossButton() {
+        message.clickOnClose();
+    }
+
+
+    @And("User click on the Warn")
+    public void userClickOnTheWarn() {
+        message.clickOnMwarn();
+    }
+
+    @Then("Warn Message popup should be show")
+    public void warnMessagePopupShouldBeShow() {
+        message.getTextMwarn();
+    }
+
+    @And("User click on the Error")
+    public void userClickOnTheError() {
+        message.clickOnMerror();
+    }
+
+    @Then("Error Message popup should be show")
+    public void errorMessagePopupShouldBeShow() {
+        message.getTextMerror();
+    }
 }

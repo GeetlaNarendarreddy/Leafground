@@ -20,6 +20,13 @@ public class ElementUtils {
         WebElement webelement = waitForElement(element, durationOfSeconds);
         webelement.click();
     }
+    public String getText(WebElement element, long durationOfSeconds) {
+
+        WebElement webelement = waitForElement(element, durationOfSeconds);
+        String text=webelement.getText();
+        return text;
+    }
+
 
     public void sendKeysToElement(WebElement element, long durationOfSeconds, String text) {
         WebElement webElement = waitForElement(element, durationOfSeconds);
