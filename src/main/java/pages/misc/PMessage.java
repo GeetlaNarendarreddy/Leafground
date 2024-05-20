@@ -76,6 +76,85 @@ public class PMessage {
 
     }
 
+    @FindBy(xpath = "//span[text()='Info']")
+    private WebElement Minfo;
+
+    @FindBy(xpath = "//span[text()='Warn']")
+    private WebElement Mwarn;
+
+    @FindBy(xpath = "//span[text()='Error']")
+    private WebElement Merror;
+
+    @FindBy(xpath = "//a[@class='ui-messages-close']")
+    private WebElement close;
+
+    @FindBy(id = "j_idt89:messages")
+    private WebElement Minfotext;
+
+    @FindBy(id = "j_idt89:messages")
+    private WebElement Mwarntext;
+
+    @FindBy(id = "j_idt89:messages")
+    private WebElement Merrortext;
+
+
+
+    public void getTextMinfo() {
+       String s=elementUtils.getText(Minfotext, CommonUtils.EXPLICIT_WAIT_MAX_TIME);
+        System.out.println(s);
+
+
+    }
+    public void getTextMwarn() {
+        String s=elementUtils.getText(Mwarntext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+        System.out.println(s);
+
+    }
+    public void getTextMerror() {
+        String s=elementUtils.getText(Merrortext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+        System.out.println(s);
+
+    }
+
+
+
+    public void clickOnMinfo() {
+        elementUtils.clickOnElement(Minfo, CommonUtils.EXPLICIT_WAIT_MAX_TIME);
+
+    }
+    public void clickOnMwarn() {
+        elementUtils.clickOnElement(Mwarn, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+    public void clickOnMerror() {
+        elementUtils.clickOnElement(Merror, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+
+    public void clickOnClose() {
+        elementUtils.clickOnElement(close, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+
+
+
+    /*@FindBy(xpath = "(//span[text()='Info'])[2]")
+    private WebElement Ginfo;
+    @FindBy(xpath = "(//span[text()='Warn'])[2]")
+    private WebElement Gwarn;
+    @FindBy(xpath = "(//span[text()='Error'])[2]")
+    private WebElement Gerror;
+*/
+
+
+
+
+
+
+
+
+
+
 
 }
 
