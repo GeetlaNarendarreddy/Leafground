@@ -1,5 +1,6 @@
 package utils;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,7 @@ public class ElementUtils {
 
         WebElement webelement = waitForElement(element, durationOfSeconds);
         String text=webelement.getText();
+        System.out.println(text);
         return text;
     }
 
@@ -51,4 +53,8 @@ public class ElementUtils {
         return webElement;
 
     }
+
+
+
+
 }

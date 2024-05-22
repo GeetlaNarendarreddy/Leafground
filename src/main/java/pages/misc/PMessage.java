@@ -18,142 +18,190 @@ public class PMessage {
     public PMessage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        elementUtils=new ElementUtils(driver);
+        elementUtils = new ElementUtils(driver);
     }
 
     @FindBy(id = "menuform:j_idt43")
     private WebElement misc;
 
+    public void clickOnMisc() {
+        elementUtils.clickOnElement(misc, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+    }
+
     @FindBy(id = "menuform:m_message")
     private WebElement message;
 
-    @FindBy(xpath = "//span[text()='Submit']")
-    private WebElement submitButton;
-
-
-    @FindBy(id = "j_idt100:lastname")
-    private WebElement lastname;
-
-    @FindBy(id = "j_idt100:email")
-    private WebElement email;
-
+    public void clickOnMessage() {
+        elementUtils.clickOnElement(message, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+    }
 
     @FindBy(id = "j_idt100:firstname")
     private WebElement firstname;
 
-
-    public void clickOnMisc() {
-
-        elementUtils.clickOnElement(misc, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-
-    }
-
-    public void clickOnMessage() {
-        elementUtils.clickOnElement(message,CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+    public void clickOnFirstNameTextBox(String inputfirstname) {
+        elementUtils.sendKeysToElement(firstname, CommonUtils.EXPLICIT_WAIT_BASIC_TIME, inputfirstname);
 
 
     }
 
-    public void clickOnSubmitButton() {
-        elementUtils.clickOnElement(submitButton,CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+    @FindBy(id = "j_idt100:lastname")
+    private WebElement lastname;
+
+    public void clickOnLastNameTextBox(String inputlastname) {
+        elementUtils.sendKeysToElement(lastname, CommonUtils.EXPLICIT_WAIT_BASIC_TIME, inputlastname);
+
     }
+
+    @FindBy(id = "j_idt100:email")
+    private WebElement email;
 
     public void clickOnEmailTextBox(String inputemail) {
 
-        elementUtils.sendKeysToElement(email,CommonUtils.EXPLICIT_WAIT_BASIC_TIME,inputemail);
+        elementUtils.sendKeysToElement(email, CommonUtils.EXPLICIT_WAIT_BASIC_TIME, inputemail);
 
     }
 
-    public void clickOnFirstNameTextBox(String inputfirstname) {
-        elementUtils.sendKeysToElement(firstname,CommonUtils.EXPLICIT_WAIT_BASIC_TIME,inputfirstname);
+    @FindBy(xpath = "//span[text()='Submit']")
+    private WebElement submitButton;
 
-
-
+    public void clickOnSubmitButton() {
+        elementUtils.clickOnElement(submitButton, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
     }
 
-    public void clickOnLastNameTextBox(String inputlastname) {
-        elementUtils.sendKeysToElement(lastname,CommonUtils.EXPLICIT_WAIT_BASIC_TIME,inputlastname);
-
-    }
 
     @FindBy(xpath = "//span[text()='Info']")
     private WebElement Minfo;
 
+    public void clickOnMinfo() {
+        elementUtils.clickOnElement(Minfo, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+
+
     @FindBy(xpath = "//span[text()='Warn']")
     private WebElement Mwarn;
 
-    @FindBy(xpath = "//span[text()='Error']")
-    private WebElement Merror;
-
-    @FindBy(xpath = "//a[@class='ui-messages-close']")
-    private WebElement close;
-
-    @FindBy(id = "j_idt89:messages")
-    private WebElement Minfotext;
-
-    @FindBy(id = "j_idt89:messages")
-    private WebElement Mwarntext;
-
-    @FindBy(id = "j_idt89:messages")
-    private WebElement Merrortext;
-
-
-
-    public void getTextMinfo() {
-       String s=elementUtils.getText(Minfotext, CommonUtils.EXPLICIT_WAIT_MAX_TIME);
-        System.out.println(s);
-
-
-    }
-    public void getTextMwarn() {
-        String s=elementUtils.getText(Mwarntext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-        System.out.println(s);
-
-    }
-    public void getTextMerror() {
-        String s=elementUtils.getText(Merrortext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-        System.out.println(s);
-
-    }
-
-
-
-    public void clickOnMinfo() {
-        elementUtils.clickOnElement(Minfo, CommonUtils.EXPLICIT_WAIT_MAX_TIME);
-
-    }
     public void clickOnMwarn() {
         elementUtils.clickOnElement(Mwarn, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
     }
+
+
+    @FindBy(xpath = "//span[text()='Error']")
+    private WebElement Merror;
+
     public void clickOnMerror() {
         elementUtils.clickOnElement(Merror, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
     }
+
+
+    @FindBy(xpath = "//a[@class='ui-messages-close']")
+    private WebElement close;
 
     public void clickOnClose() {
         elementUtils.clickOnElement(close, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
     }
 
+    @FindBy(xpath = "//li[@role='alert']")
+    private WebElement getTextMessages;
 
 
-    /*@FindBy(xpath = "(//span[text()='Info'])[2]")
-    private WebElement Ginfo;
-    @FindBy(xpath = "(//span[text()='Warn'])[2]")
-    private WebElement Gwarn;
-    @FindBy(xpath = "(//span[text()='Error'])[2]")
-    private WebElement Gerror;
+    public void getTextMessages() {
+        elementUtils.getText(getTextMessages, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+
+    }
+     /* @FindBy(xpath ="//li[@role='alert']")
+    private WebElement Minfotext;
+
+    public void getTextMinfo() {
+       elementUtils.getText(Minfotext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }*/
+
+   /* @FindBy(xpath ="//li[@role='alert']")
+    private WebElement Mwarntext;
+
+    public void getTextMwarn() {
+       elementUtils.getText(Mwarntext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }*/
+
+  /*  @FindBy(xpath ="//li[@role='alert']")
+    private WebElement Merrortext;
+
+    public void getTextMerror() {
+         elementUtils.getText(Merrortext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+
+    }
 */
 
+    @FindBy(xpath = "(//span[text()='Info'])[2]")
+    private WebElement Ginfo;
+
+    public void clickOnGinfo() {
+
+        elementUtils.clickOnElement(Ginfo, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+
+    @FindBy(xpath = "(//span[text()='Warn'])[2]")
+    private WebElement Gwarn;
+
+    public void clickOnGwarn() {
+
+        elementUtils.clickOnElement(Gwarn, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+
+    @FindBy(xpath = "(//span[text()='Error'])[2]")
+    private WebElement Gerror;
+
+    public void clickOnGerror() {
+
+        elementUtils.clickOnElement(Gerror, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+
+    }
+
+    /* @FindBy(xpath = "//span[@class='ui-growl-title' and text()='Error']")
+     private WebElement getTextGerror;
+
+     public void getTextGerror() {
+
+         elementUtils.getText(getTextGerror, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
 
+     }*/
+   /* @FindBy(xpath = "//span[@class='ui-growl-title' and text()='Warning']")
+    private WebElement getTextGWarn;
+
+    public void getTextGWarn() {
+
+        elementUtils.getText(getTextGWarn, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
 
+    }*/
+    /*@FindBy(xpath ="//span[@class='ui-growl-title' and text()='Info']")
+    private WebElement getTextGInfo;
+
+    public void getTextGInfo() {
+
+        elementUtils.getText(getTextGInfo, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
 
+    }*/
+    @FindBy(xpath = "//div[@class='ui-growl-item']")
+    private WebElement getTextGrowl;
+
+    public void getTextGrowl() {
+
+        elementUtils.getText(getTextGrowl, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
 
+    }
 
 
 }
