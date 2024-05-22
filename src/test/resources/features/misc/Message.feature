@@ -5,7 +5,6 @@ Feature: Message Functionality
     When Click on the Misc
     And Click on the Message
 
-
   Scenario: Verify the inline(form) Functionality
     And User enters the details into below fields
       | First Name | Test                |
@@ -27,6 +26,19 @@ Feature: Message Functionality
     And User click on the Error
     Then Error Message popup should be show
     Then Click on the cross button
+
+  Scenario: Verify the Growl info Functionality
+    And User click on the GInfo
+    Then GInfo Message popup should be show
+
+  Scenario: Verify the Growl warn Functionality
+    And User click on the Gwarn
+    Then Gwarn Message popup should be show
+
+  Scenario: Verify the Growl Error Functionality
+    And User click on the GError
+    Then GError Message popup should be show
+
 
 
 
