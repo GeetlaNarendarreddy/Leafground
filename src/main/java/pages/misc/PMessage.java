@@ -113,31 +113,9 @@ public class PMessage {
 
 
     }
-     /* @FindBy(xpath ="//li[@role='alert']")
-    private WebElement Minfotext;
-
-    public void getTextMinfo() {
-       elementUtils.getText(Minfotext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-
-    }*/
-
-   /* @FindBy(xpath ="//li[@role='alert']")
-    private WebElement Mwarntext;
-
-    public void getTextMwarn() {
-       elementUtils.getText(Mwarntext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-
-    }*/
-
-  /*  @FindBy(xpath ="//li[@role='alert']")
-    private WebElement Merrortext;
-
-    public void getTextMerror() {
-         elementUtils.getText(Merrortext, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
 
-    }
-*/
+
 
     @FindBy(xpath = "(//span[text()='Info'])[2]")
     private WebElement Ginfo;
@@ -166,33 +144,9 @@ public class PMessage {
 
     }
 
-    /* @FindBy(xpath = "//span[@class='ui-growl-title' and text()='Error']")
-     private WebElement getTextGerror;
-
-     public void getTextGerror() {
-
-         elementUtils.getText(getTextGerror, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
 
 
-     }*/
-   /* @FindBy(xpath = "//span[@class='ui-growl-title' and text()='Warning']")
-    private WebElement getTextGWarn;
 
-    public void getTextGWarn() {
-
-        elementUtils.getText(getTextGWarn, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-
-
-    }*/
-    /*@FindBy(xpath ="//span[@class='ui-growl-title' and text()='Info']")
-    private WebElement getTextGInfo;
-
-    public void getTextGInfo() {
-
-        elementUtils.getText(getTextGInfo, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
-
-
-    }*/
     @FindBy(xpath = "//div[@class='ui-growl-item']")
     private WebElement getTextGrowl;
 
