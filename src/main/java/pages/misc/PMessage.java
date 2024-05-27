@@ -25,7 +25,7 @@ public class PMessage {
     private WebElement misc;
 
     public void clickOnMisc() {
-        elementUtils.clickOnElement(misc, CommonUtils.EXPLICIT_WAIT_BASIC_TIME);
+        elementUtils.clickOnElement(misc, CommonUtils.EXPLICIT_WAIT_MAX_TIME);
     }
 
     @FindBy(id = "menuform:m_message")
